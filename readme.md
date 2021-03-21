@@ -21,6 +21,10 @@ ConnectWise Manage - Create an Integrator Login with a Callback URL
 Teams - the Channel Name you want to see alerts
 ConnectWise Manage - The EXACT name of the Service Board you want to see the alerts from (spaces and all)
 
+# Disclaimer
+
+You can read our license, but specifically: THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 # Step One: Teams Tasks to Complete
 
 **1. Webhook URL**
@@ -73,3 +77,7 @@ It should "just work" if you read all of the instructions. If it doesn't check y
 - Azure: Commercial Cloud in East US
 - ConnectWise Manage: Cloud Hosted in NA Cloud
 - Teams: Standard Commercial deployment in US
+
+# Additional Resources
+
+If you would like more information on Callbacks in ConnectWise Manage, go to the ConnectWise Manage Developer Documentation on CallBacks Here: https://developer.connectwise.com/Best_Practices/Manage_Callbacks
