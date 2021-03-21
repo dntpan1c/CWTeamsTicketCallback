@@ -6,6 +6,8 @@ NOTE: READ THE ENTIRE PROCESS BEFORE CONTINUING. I KNOW YOU JUST WANT TO START D
 
 This function places certain information from live updates made to Service Tickets in your ConnectWise Manage PSA (On-Premise and Cloud) on a specified Service Board to be displayed in Real Time with certain relevant information in Microsoft Teams in a specific Channel. The time between an update to a Ticket in ConnectWise Manage to a message in a Teams Channel is less than a few seconds. 
 
+There is a "duplicate check" implemented here that will only show the first update to each ticket that the connector sees. If there is a duplicate callback, it will be processed but not pushed to the channel. 
+
 Going into this, you will want to know the EXACT name (spaces and all) of the ConnectWise Service Board you will want information to flow from (this only supports a single board -- complete this process for each board you want to do this with) and which Teams Channel you want this to flow into. 
 
 # Prerequisites
