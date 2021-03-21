@@ -1,3 +1,5 @@
+Based off of work completed by Adam Hancock at: https://github.com/adamhancock/cwteams.git
+
 # Azure
 
 - Create a new function app inside the Azure Portal.
