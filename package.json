@@ -1,6 +1,6 @@
 {
-  "name": "cwteams",
-  "version": "1.0.0",
+  "name": "CWTeamsTicketCallback",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
@@ -13,8 +13,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adamhancock/cwteams.git"
+    "url": "git+https://github.com/dntpan1c/CWTeamsTicketCallback.git"
   },
-  "author": "Adam Hancock",
+  "author": "Marc Menzies, CISSP",
   "license": "ISC"
 }
