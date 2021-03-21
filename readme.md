@@ -25,8 +25,8 @@ ConnectWise Manage - The EXACT name of the Service Board you want to see the ale
 
 **1. Webhook URL**
 - In Microsoft Teams, find the desired Channel that you would like to see these alerts come up in, we will need to configure a Webhook and get a "Webhook URL"
-- To get the Webhook URL, right click the Channel and select Connectors. Search for "Incoming Webhook" and choose Configure. 
-- NOTE: If you already have a Webhook for this Channel, then simply copy down the Webhook URL and proceed to **"Step Two: Azure Tasks to Complete"**
+- To get the Webhook URL, right click the Channel and select Connectors. Search for "Incoming Webhook" and choose "Add" (If "Configure" is displayed, this means that the team already has the Webhook Connector Enabled, and you should choose "Configure" instead)
+- NOTE: If you already have a Webhook for this specific Channel, then simply copy down the Webhook URL and proceed to **"Step Two: Azure Tasks to Complete"**
 - Configure a Webhook by choosing a Name for the Webhook, and an image that you would like to be shown when the incoming messages are displayed. I chose to use the ConnectWise Manage logo so our team would know where the Data was coming from. 
 - After creating the webhook, you will be given a Webhook URL
 - Write down this Webhook URL to be used later. 
