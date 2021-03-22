@@ -10,7 +10,7 @@ This function places certain information from live updates made to Service Ticke
 
 There is a "duplicate check" implemented here that will only show the first update to each ticket that the connector sees. If there is a duplicate callback, it will be processed but not pushed to the channel. 
 
-Going into this, you will want to know the EXACT name (spaces and all) of the ConnectWise Service Board you will want information to flow from (this only supports a single board -- complete this process for each board you want to do this with) and which Teams Channel you want this to flow into. 
+Going into this, you will want to know the EXACT name (spaces and all) of the ConnectWise Service Board you will want information to flow from (this supports MULTIPLE Service Boards going to MULTIPLE Channels using this ONE function -- just complete this process for each board you want to do this with) and which Teams Channel you want this to flow into. 
 
 # Prerequisites
 **You will need the following permissions in each application:** 
@@ -40,7 +40,7 @@ You can read our license, but specifically: THE SOFTWARE IS PROVIDED “AS IS”
 - Configure a Webhook by choosing a Name for the Webhook, and an image that you would like to be shown when the incoming messages are displayed. I chose to use the ConnectWise Manage logo so our team would know where the Data was coming from. 
 - After creating the Webhook, you will be given a Webhook URL
 - Write down this Webhook URL to be used later. 
-
+- Note: Complete this task for each channel you choose to post information to
 
 # Step Two: Azure Tasks to Complete
 **1. Create the Function**
@@ -59,6 +59,7 @@ You can read our license, but specifically: THE SOFTWARE IS PROVIDED “AS IS”
 **3. Configure the Function Code**
 - In your Azure Function App, go to "Configuration" (Under "Settings") > Application Settings Tab, 
 - Add a new Setting with the name as your ConnectWise Service Board name, and the value as the Webhook URL of the Teams Channel you want to post to. You get this information from the prior steps and prerequisites. 
+- Note: Complete this specific step in this task for each Service Board - Channel Combination you choose to post. You can have data from multiple Service Boards posting to a single Channel -- or data from a single Service Board posting to multiple channels, or any combination thereof. 
 
 
 # Step Three: ConnectWise Manage Tasks to Complete
