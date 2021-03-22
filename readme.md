@@ -2,6 +2,9 @@ Based off of work completed by Adam Hancock at: https://github.com/adamhancock/c
 
 NOTE: READ THE ENTIRE PROCESS BEFORE CONTINUING. I KNOW YOU JUST WANT TO START DEPLOYING. READ THE INSTRUCTIONS FIRST. THIS ENTIRE PROCESS SHOULD TAKE UNDER 30 MINUTES. IF IT DOESN'T IT MEANS YOU ARE DOING SOMETHING WRONG AND DIDN'T READ THE INSTRUCTIONS!
 
+# Branch
+This Branch is the standard branch. 
+
 # Purpose
 This function places certain information from live updates made to Service Tickets in your ConnectWise Manage PSA (On-Premise and Cloud) on a specified Service Board to be displayed in Real Time with certain relevant information in Microsoft Teams in a specific Channel. The time between an update to a Ticket in ConnectWise Manage to a message in a Teams Channel is less than a few seconds. 
 
