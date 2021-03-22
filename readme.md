@@ -47,6 +47,7 @@ You can read our license, but specifically: THE SOFTWARE IS PROVIDED “AS IS”
 - Create a new function app inside your Azure Portal (https://portal.azure.com).
 - Choose the function app name, and write it down as it will be used later. 
 - Select from the menus the following settings: code running Node.js 14LTS in your desired region. 
+- Select "Windows" (NOT Linux!)
 - You should enable "Application Insights" for Troubleshooting Purposes
 - Tag as needed, and Create the function. 
 
