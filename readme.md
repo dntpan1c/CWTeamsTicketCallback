@@ -15,7 +15,7 @@ Teams - Permission to create a Webhook for the desired Channel
 Azure - Create a Function App in your Subscription, and configure its settings. 
 ConnectWise Manage - Create an Integrator Login with a Callback URL
 
-**You will need to know the following infromation**
+**You will need to know the following information**
 Teams - the Channel Name you want to see alerts
 ConnectWise Manage - The EXACT name of the Service Board you want to see the alerts from (spaces and all)
 
@@ -35,7 +35,7 @@ You can read our license, but specifically: THE SOFTWARE IS PROVIDED “AS IS”
 - To get the Webhook URL, right click the Channel and select Connectors. Search for "Incoming Webhook" and choose "Add" (If "Configure" is displayed, this means that the team already has the Webhook Connector Enabled, and you should choose "Configure" instead)
 - NOTE: If you already have a Webhook for this specific Channel, then simply copy down the Webhook URL and proceed to **"Step Two: Azure Tasks to Complete"**
 - Configure a Webhook by choosing a Name for the Webhook, and an image that you would like to be shown when the incoming messages are displayed. I chose to use the ConnectWise Manage logo so our team would know where the Data was coming from. 
-- After creating the webhook, you will be given a Webhook URL
+- After creating the Webhook, you will be given a Webhook URL
 - Write down this Webhook URL to be used later. 
 
 
@@ -65,10 +65,10 @@ You can read our license, but specifically: THE SOFTWARE IS PROVIDED “AS IS”
 - Select All Records. 
 - Check off "Service Ticket" under the "API Name Section"
 - Set the Callback URL of Service Ticket to https://< your function app name >.azurewebsites.net/api/CWIncoming?serviceid=
-- Set the Serivce Board to the Desired ConnectWise Manage Service Board
+- Set the Service Board to the Desired ConnectWise Manage Service Board
 - Save and Close!
 
-# Last Step: Testing and Trobleshooting
+# Last Step: Testing and Troubleshooting
 That's it! It should be working! Try to update a Status or Contact of a Ticket on the Desired Service Board and watch the message come in through teams!
 
 It should "just work" if you read all of the instructions. If it doesn't check your permissions for each application, and check under your function app under "Application Insights" > "Live Events". Also, compare your environment to our testing environment (below). It is possible that you might need certain Firewall adjustments if you are using ConnectWise On-Premise as opposed to the Cloud Hosted version. 
