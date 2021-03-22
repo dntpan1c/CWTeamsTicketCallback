@@ -23,6 +23,7 @@ ConnectWise Manage - The EXACT name of the Service Board you want to see the ale
 When creating any sort of connectors that interface with your production environment, it is important to document those connectors and ensure they only exist if they continue to be required. If you stop using this, delete all connectors and software associated so that these interfaces cannot be compromised or used nefariously later. 
 
 **Be Aware of the Exploitability of this Setup**
+
 The ConnectWise Manage Callbacks function (see documentation below under **"Additional Resources"**) DOES include a way to verify the source as being from ConnectWise Manage, and not from another source.  We have NOT implemented these checks into this code. That being said, please be sure to obfuscate your App Name, do not share it, as anything sent to https://< your function app name >.azurewebsites.net/api/CWIncoming?serviceid= will not be checked to verify its source! This might be something that I may add later, but in the mean time this can be used as an attack vector to push malicious links or other information to your Microsoft Teams instance. 
 
 # Disclaimer
