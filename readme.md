@@ -3,7 +3,6 @@ Based off of work completed by Adam Hancock at: https://github.com/adamhancock/c
 NOTE: READ THE ENTIRE PROCESS BEFORE CONTINUING. I KNOW YOU JUST WANT TO START DEPLOYING. READ THE INSTRUCTIONS FIRST. THIS ENTIRE PROCESS SHOULD TAKE UNDER 30 MINUTES. IF IT DOESN'T IT MEANS YOU ARE DOING SOMETHING WRONG AND DIDN'T READ THE INSTRUCTIONS!
 
 # Purpose
-
 This function places certain information from live updates made to Service Tickets in your ConnectWise Manage PSA (On-Premise and Cloud) on a specified Service Board to be displayed in Real Time with certain relevant information in Microsoft Teams in a specific Channel. The time between an update to a Ticket in ConnectWise Manage to a message in a Teams Channel is less than a few seconds. 
 
 There is a "duplicate check" implemented here that will only show the first update to each ticket that the connector sees. If there is a duplicate callback, it will be processed but not pushed to the channel. 
@@ -11,7 +10,6 @@ There is a "duplicate check" implemented here that will only show the first upda
 Going into this, you will want to know the EXACT name (spaces and all) of the ConnectWise Service Board you will want information to flow from (this only supports a single board -- complete this process for each board you want to do this with) and which Teams Channel you want this to flow into. 
 
 # Prerequisites
-
 **You will need the following permissions in each application:** 
 Teams - Permission to create a Webhook for the desired Channel
 Azure - Create a Function App in your Subscription, and configure its settings. 
@@ -21,12 +19,16 @@ ConnectWise Manage - Create an Integrator Login with a Callback URL
 Teams - the Channel Name you want to see alerts
 ConnectWise Manage - The EXACT name of the Service Board you want to see the alerts from (spaces and all)
 
-# Disclaimer
+# Notes on Security Best Practices
+When creating any sort of connectors that interface with your production environment, it is important to document those connectors and ensure they only exist if they continue to be required. If you stop using this, delete all connectors and software associated so that these interfaces cannot be compromised or used nefariously later. 
 
+**Be Aware of the Exploitability of this Setup**
+The ConnectWise Manage Callbacks function (see documentation below under **"Additional Resources"**) DOES include a way to verify the source as being from ConnectWise Manage, and not from another source.  We have NOT implemented these checks into this code. That being said, please be sure to obfuscate your App Name, do not share it, as anything sent to https://< your function app name >.azurewebsites.net/api/CWIncoming?serviceid= will not be checked to verify its source! This might be something that I may add later, but in the mean time this can be used as an attack vector to push malicious links or other information to your Microsoft Teams instance. 
+
+# Disclaimer
 You can read our license, but specifically: THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 # Step One: Teams Tasks to Complete
-
 **1. Webhook URL**
 - In Microsoft Teams, find the desired Channel that you would like to see these alerts come up in, we will need to configure a Webhook and get a "Webhook URL"
 - To get the Webhook URL, right click the Channel and select Connectors. Search for "Incoming Webhook" and choose "Add" (If "Configure" is displayed, this means that the team already has the Webhook Connector Enabled, and you should choose "Configure" instead)
@@ -37,7 +39,6 @@ You can read our license, but specifically: THE SOFTWARE IS PROVIDED “AS IS”
 
 
 # Step Two: Azure Tasks to Complete
-
 **1. Create the Function**
 - Create a new function app inside your Azure Portal (https://portal.azure.com).
 - Choose the function app name, and write it down as it will be used later. 
@@ -57,7 +58,6 @@ You can read our license, but specifically: THE SOFTWARE IS PROVIDED “AS IS”
 
 
 # Step Three: ConnectWise Manage Tasks to Complete
-
 **1. Create Credentials and Callback**
 - In ConnectWise Manage go to "Setup Tables" > "Integrator Login" Table
 - Create a New Integrator Login. The Username identifies the Integrator. The password doesn't matter here, but make the password a strong password anyway. You don't need to store it or write it down. You don't even need the Username as the only important thing is the Callback URL. 
@@ -68,7 +68,6 @@ You can read our license, but specifically: THE SOFTWARE IS PROVIDED “AS IS”
 - Save and Close!
 
 # Last Step: Testing and Trobleshooting
-
 That's it! It should be working! Try to update a Status or Contact of a Ticket on the Desired Service Board and watch the message come in through teams!
 
 It should "just work" if you read all of the instructions. If it doesn't check your permissions for each application, and check under your function app under "Application Insights" > "Live Events". Also, compare your environment to our testing environment (below). It is possible that you might need certain Firewall adjustments if you are using ConnectWise On-Premise as opposed to the Cloud Hosted version. 
@@ -79,5 +78,4 @@ It should "just work" if you read all of the instructions. If it doesn't check y
 - Teams: Standard Commercial deployment in US
 
 # Additional Resources
-
 If you would like more information on Callbacks in ConnectWise Manage, go to the ConnectWise Manage Developer Documentation on CallBacks Here: https://developer.connectwise.com/Best_Practices/Manage_Callbacks
